@@ -10,19 +10,11 @@
 	</h:head>
 	<h:body>
 		<h:form>
-			<h3>Mesedez, sartu izena eta pasahitza</h3>
-			<table>
-				<tr>
-					<td>Izena:</td>
-					<td><h:inputText id="izen" value="#{login.izena}"></h:inputText></td>
-				</tr>
-				<tr>
-					<td>Pasahitza:</td>
-					<td><h:inputSecret id="pass" value="#{login.pasahitza}"></h:inputSecret></td>
-				</tr>
-			</table>
 			<p>
-				<h:commandButton value="Onartu" action="#{login.egiaztatu}" />
+				<h:commandButton value="Create Rides" action="#{queryRides.create}" />
+			</p>
+			<p>
+				<h:commandButton value="Query Rides" action="#{queryRides.query}" />
 			</p>
 		</h:form>
 	</h:body>
