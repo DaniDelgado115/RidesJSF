@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf17320272291130" configfile="/RidesJSF/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="CreateRide.xhtml" x="660" y="120" id="pf17320294572650" inlinks="pf17320296146553" path="/CreateRide.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Hasiera.xhtml" x="180" y="240" id="pf17320294572651" outlinks="pf17320296146553 pf17320296146554" path="/Hasiera.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="QueryRides.xhtml" x="636" y="348" id="pf17320294572652" inlinks="pf17320296146554" path="/QueryRides.xhtml"/>
+  <links id="pf17320296146553" target="pf17320294572650" source="pf17320294572651" outcome="OK">
+    <bendPoints d1Width="197" d1Height="-143" d2Width="-294" d2Height="-23"/>
+    <bendPoints d1Width="294" d1Height="-165" d2Width="-197" d2Height="-45"/>
+  </links>
+  <links id="pf17320296146554" target="pf17320294572652" source="pf17320294572651"/>
+</pageflow:Pageflow>
