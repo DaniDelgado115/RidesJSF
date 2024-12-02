@@ -1,19 +1,69 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-xmlns:ui="http://java.sun.com/jsf/facelets"
-xmlns:h="http://java.sun.com/jsf/html"
-xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 <f:view>
-<h:head>
-<title> JavaServer Faces aplikazioa </title>
-</h:head>
-<h:body>
-<h:form>
-<h3> Ongi etorri JavaServer Faces-era,
-<h:outputText value="#{login.izena}"/>!
-</h3>
-</h:form>
-</h:body>
+	<f:metadata>
+        <f:event type="preRenderView" listener="#{queryRides.onLoad}" />
+    </f:metadata>
+	
+	<h:head>
+		<title>Rides JSF: Query Rides</title>
+	</h:head>
+	<h:body>
+		<h:form>
+			<table>
+				<tr>
+					<td>Depart city</td>
+					<td><h:selectOneMenu value="#{queryRides.dcity}">
+							<f:selectItems value="#{queryRides.dcities}" />
+							<f:ajax event="click" listener="#{queryRides.updateAC}" render="acities"/>
+						</h:selectOneMenu></td>
+				</tr>
+				<tr>
+					<td>Arrival city</td>
+					<td><h:selectOneMenu id="acities" value="#{queryRides.acity}">
+							<f:selectItems value="#{queryRides.acities}" />
+						</h:selectOneMenu></td>
+				</tr>
+				<p:calendar id="data" value="#{queryRides.data}" navigator="true"
+					mode="inline">
+
+				</p:calendar>
+
+			</table>
+			<p>
+				<h:commandButton value="Bilatu" action="#{queryRides.bilatu}" />
+			</p>
+
+			<tr>
+				<td><h:dataTable id="taula" value="#{queryRides.rides}"
+						var="item" border="1">
+						<f:facet name="header">Rides:</f:facet>
+						<h:column>
+							<f:facet name="header">Driver</f:facet>
+							#{item.driver.name}
+						</h:column>
+						<h:column>
+							<f:facet name="header">Seats</f:facet>
+							#{item.nPlaces}
+						</h:column>
+						<h:column>
+							<f:facet name="header">Price</f:facet>
+							#{item.price}
+						</h:column>
+					</h:dataTable></td>
+			</tr>
+			
+			<p>
+				<h:commandButton value="atzera" action="#{queryRides.goBack}">
+				</h:commandButton>
+			</p>
+			<h:messages style="color:blue" />
+		</h:form>
+	</h:body>
 </f:view>
 </html>

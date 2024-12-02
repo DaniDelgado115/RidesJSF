@@ -1,17 +1,65 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-xmlns:ui="http://java.sun.com/jsf/facelets"
-xmlns:h="http://java.sun.com/jsf/html"
-xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 <f:view>
-<h:head>
-<title> JavaServer Faces aplikazioa </title>
-</h:head>
-<h:body>
-<h:form>
-<h3> Pirata, ezin zara sartu!. </h3>
-</h:form>
-</h:body>
+	<h:head>
+		<title>Rides JSF: Create Ride</title>
+	</h:head>
+	<h:body>
+		<h:form>
+			<table>
+				<tr>
+					<td>Depart City:</td>
+					<td><h:inputText id="dcity" value="#{createRide.dcity}">
+							<f:validateRegex pattern="^[a-záéíóúüñA-ZÁÉÍÓÚÜÑ\s]+$" />
+						</h:inputText></td>
+					<td><h:message for="dcity" style="color:red" /></td>
+				</tr>
+
+				<tr>
+					<td>Arrival city:</td>
+					<td><h:inputText id="acity" value="#{createRide.acity}">
+							<f:validateRegex pattern="^[a-záéíóúüñA-ZÁÉÍÓÚÜÑ\s]+$" />
+						</h:inputText></td>
+					<td><h:message for="acity" style="color:red" /></td>
+				</tr>
+
+				<tr>
+					<td>Seats number:</td>
+					<td><h:inputText id="seats" value="#{createRide.seats}">
+							<f:validateLongRange minimum="1" maximum="500" />
+						</h:inputText></td>
+					<td><h:message for="seats" style="color:red" /></td>
+				</tr>
+
+				<tr>
+					<td>Price:</td>
+					<td><h:inputText id="price" value="#{createRide.price}">
+							<f:validateLongRange minimum="1" maximum="500" />
+						</h:inputText></td>
+					<td><h:message for="price" style="color:red" /></td>
+				</tr>
+				<tr>
+					<td>Date:</td>
+					<td><p:calendar id="data" value="#{createRide.data}"
+							mode="popup" pattern="dd/MM/yyyy">
+						</p:calendar></td>
+				</tr>
+			</table>
+			<p>
+				<h:commandButton value="Create" action="#{createRide.egiaztatu}">
+				</h:commandButton>
+			</p>
+			<p>
+				<h:commandButton value="atzera" action="#{createRide.goBack}" immediate="true">
+				</h:commandButton>
+			</p>
+			<h:messages style="color:blue" />
+		</h:form>
+	</h:body>
 </f:view>
 </html>

@@ -10,6 +10,16 @@
 		<managed-bean-class>eredua.bean.QueryRides</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>hasiera</managed-bean-name>
+		<managed-bean-class>eredua.bean.Hasiera</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>createRide</managed-bean-name>
+		<managed-bean-class>eredua.bean.CreateRide</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
 	<navigation-rule>
 		<display-name>Hasiera.xhtml</display-name>
 		<from-view-id>/Hasiera.xhtml</from-view-id>
@@ -24,6 +34,22 @@
 		<navigation-case>
 			<from-outcome>create</from-outcome>
 			<to-view-id>/CreateRide.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>CreateRide.xhtml</display-name>
+		<from-view-id>/CreateRide.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>atzera</from-outcome>
+			<to-view-id>/Hasiera.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>QueryRides.xhtml</display-name>
+		<from-view-id>/QueryRides.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>atzera</from-outcome>
+			<to-view-id>/Hasiera.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 

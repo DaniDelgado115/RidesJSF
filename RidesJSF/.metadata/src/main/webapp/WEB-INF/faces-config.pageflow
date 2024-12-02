@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf17320272291130" configfile="/RidesJSF/src/main/webapp/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="CreateRide.xhtml" x="660" y="120" id="pf17320294572650" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf17320545946080" path="/CreateRide.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="Hasiera.xhtml" x="180" y="240" id="pf17320294572651" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf17320296146554 pf17320545946080" path="/Hasiera.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="QueryRides.xhtml" x="636" y="348" id="pf17320294572652" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf17320296146554" path="/QueryRides.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="CreateRide.xhtml" x="660" y="120" id="pf17320294572650" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" outlinks="pf17331700325720" inlinks="pf17320545946080" path="/CreateRide.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Hasiera.xhtml" x="180" y="240" id="pf17320294572651" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf17320296146554 pf17320545946080" inlinks="pf17331700325720 pf17331700325751" path="/Hasiera.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="QueryRides.xhtml" x="636" y="348" id="pf17320294572652" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" outlinks="pf17331700325751" inlinks="pf17320296146554" path="/QueryRides.xhtml"/>
   <links id="pf17320296146554" target="pf17320294572652" source="pf17320294572651" outcome="query"/>
   <links id="pf17320545946080" target="pf17320294572650" source="pf17320294572651" outcome="create"/>
+  <links id="pf17331700325720" target="pf17320294572651" source="pf17320294572650" outcome="atzera"/>
+  <links id="pf17331700325751" target="pf17320294572651" source="pf17320294572652" outcome="atzera"/>
 </pageflow:Pageflow>
