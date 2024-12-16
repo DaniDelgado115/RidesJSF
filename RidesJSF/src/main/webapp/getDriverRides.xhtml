@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<f:view>
+	<h:head>
+		<title>Get driver Rides</title>
+	</h:head>
+	<h:body>
+		<h:form id="getdriverrides">
+			<table>
+				<tr>
+					<td>Select Driver</td>
+					<td><h:selectOneMenu value="#{getDriverRides.driver}">
+							<f:selectItems value="#{getDriverRides.drivers}" />
+						</h:selectOneMenu></td>
+				</tr>
+				
+			</table>
+			<p>
+				<h:commandButton value="Bilatu" action="#{getDriverRides.bilatu}">
+				</h:commandButton>
+			</p>
+			<p>
+				<h:commandButton value="atzera" action="#{getDriverRides.goBack2}">
+				</h:commandButton>
+			</p>
+			<h:messages style="color:blue" />
+		</h:form>
+	</h:body>
+</f:view>
+</html>

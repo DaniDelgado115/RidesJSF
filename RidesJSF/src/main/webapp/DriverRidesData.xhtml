@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<f:view>
+	<f:metadata>
+        <f:event type="preRenderView" listener="#{queryRides.onLoad}" />
+    </f:metadata>
+	
+	<h:head>
+		<title>Driver Rides Data</title>
+		
+	</h:head>
+	<h:body>
+		<h:form>
+			<tr>
+				<td><h:dataTable id="taula" value="#{getDriverRides.rides}"
+						var="item" border="1">
+						<f:facet name="header">Rides:</f:facet>
+						<h:column>
+							<f:facet name="header">DEPART CITY</f:facet>
+							#{item.nondik}
+						</h:column>
+						<h:column>
+							<f:facet name="header">ARRIVAL CITY</f:facet>
+							#{item.too}
+						</h:column>
+						<h:column>
+							<f:facet name="header">RIDE DATE</f:facet>
+							#{item.data}
+						</h:column>
+						<h:column>
+							<f:facet name="header">PRICE</f:facet>
+							#{item.price}
+						</h:column>
+						
+					</h:dataTable></td>
+			</tr>
+			
+			<p>
+				<h:commandButton value="atzera" action="#{queryRides.goBack}">
+				</h:commandButton>
+			</p>
+			<h:messages style="color:blue" />
+		</h:form>
+	</h:body>
+</f:view>
+</html>

@@ -2,6 +2,7 @@ package eredua.bean;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Vector;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -14,7 +15,7 @@ import domain.Ride;
 
 public class QueryRides {
 	private BLFacade facadeBL;
-	private List<Ride> rides;
+	private List<Ride> rides= new Vector<Ride>();
 	private List<String> dcities;
 	private List<String> acities;
 	private String dcity;

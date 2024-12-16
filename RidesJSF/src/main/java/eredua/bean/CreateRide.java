@@ -21,6 +21,8 @@ public class CreateRide {
 	private int seats;
 	private float price;
 	private Date data;
+	private List<String> drivers;
+	private String driver;
 	
 
 	public CreateRide() {
@@ -29,6 +31,8 @@ public class CreateRide {
 		} catch (Exception e) {
 			System.out.println("FacadeBean: negozioaren logika sortzean errorea: " + e.getMessage());
 		}
+		drivers=facadeBL.getDrivers();
+		driver=drivers.getFirst();
 	}
 
 	public String getDcity() {
@@ -83,7 +87,7 @@ public class CreateRide {
                 return null;
             }
 
-            Ride r = facadeBL.createRide(dcity, acity, data, seats, price, "driver3@gmail.com");
+            Ride r = facadeBL.createRide(dcity, acity, data, seats, price, driver);
             context.addMessage(null, 
                 new FacesMessage("Ride sortuta: " + r.toString()));
         } catch (Exception e) {
@@ -97,6 +101,22 @@ public class CreateRide {
 	
 	public String goBack() {
 		return "atzera";
+	}
+
+	public List<String> getDrivers() {
+		return drivers;
+	}
+
+	public void setDrivers(List<String> drivers) {
+		this.drivers = drivers;
+	}
+
+	public String getDriver() {
+		return driver;
+	}
+
+	public void setDriver(String driver) {
+		this.driver = driver;
 	}
 	
 	/*public void onDateSelect(SelectEvent event) {

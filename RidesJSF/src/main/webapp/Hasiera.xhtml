@@ -11,11 +11,33 @@
 	<h:body>
 		<h:form>
 			<p>
-				<h:commandButton value="Create Rides" action="#{hasiera.create}" />
+				<h:commandButton value="Create Rides" action="#{hasiera.create}" rendered="#{hasiera.CR}"/>
 			</p>
 			<p>
-				<h:commandButton value="Query Rides" action="#{hasiera.query}" />
+				<h:commandButton value="Query Rides" action="#{hasiera.query}" rendered="#{hasiera.QR}"/>
 			</p>
+			<p>
+				<h:commandButton value="Login" action="#{hasiera.login}" rendered="#{hasiera.LO}"/>
+			</p>
+			<p>
+				<h:commandButton value="Sign in" action="#{hasiera.signIn}" rendered="#{hasiera.SI}"/>
+			</p>
+			
+			<p>
+				<h:commandButton value="GIDARI BATEN BIDAI GUZTIAK ERAKUTSI" action="#{hasiera.gidariarenBidaiak}" rendered="#{hasiera.QR}"/>
+			</p>
+			
+			<p>
+				<h:commandButton value="Delete User" action="#{hasiera.delete}" rendered="#{hasiera.QR}"/>
+			</p>
+			
+			<p>
+				<h:commandButton value="Log Out" action="#{hasiera.logOut}" rendered="#{hasiera.QR}"/>
+			</p>
+			<p>
+				<h:commandButton value="Erabiltzaile gida" action="#{hasiera.informazioa}" rendered="#{hasiera.QR}"/>
+			</p>
+			
 		</h:form>
 	</h:body>
 </f:view>

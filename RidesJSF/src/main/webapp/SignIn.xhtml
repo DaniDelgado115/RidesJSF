@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<f:view>
+	<h:head>
+		<title>Sign In</title>
+	</h:head>
+	<h:body>
+		<h:form id="signinForm">
+			<table>
+				<tr>
+					<td>Username:</td>
+					<td><h:inputText id="username" value="#{signIn.username}">
+							<f:validateRegex pattern="^[a-zA-Z0-9_]+$" />
+						</h:inputText></td>
+					<td><h:message for="username" style="color:red" /></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><h:inputSecret id="password"
+							value="#{signIn.password}">
+							<f:validateLength minimum="4" maximum="20" />
+						</h:inputSecret></td>
+					<td><h:message for="password" style="color:red" /></td>
+				</tr>
+				
+			</table>
+			<p>
+				<h:commandButton value="Sign In" action="#{signIn.signIn}">
+					<f:ajax execute="@form" render="@form" />
+				</h:commandButton>
+			</p>
+			<p>
+				<h:commandButton value="atzera" action="#{signIn.goBack}">
+				</h:commandButton>
+			</p>
+			<h:messages style="color:blue" />
+		</h:form>
+	</h:body>
+</f:view>
+</html>
